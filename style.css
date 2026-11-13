@@ -1,0 +1,20 @@
+:root { --fg:#1d1f24; --muted:#5b6170; --accent:#1e3c6e; --bg:#fdfcf9; --rule:#e2e0da; }
+@media (prefers-color-scheme: dark) {
+  :root { --fg:#e6e6e6; --muted:#a3a8b3; --accent:#8fb3ec; --bg:#16181c; --rule:#2c2f36; }
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+  font:17px/1.6 Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif; }
+main { max-width:42rem; margin:0 auto; padding:3rem 1rem 4rem; }
+h1 { font-size:2rem; margin:0; font-weight:600; }
+.tagline { color:var(--muted); margin:.25rem 0 1rem; }
+nav a { margin-right:1.25rem; }
+a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; }
+a:hover { border-bottom-color:currentColor; }
+h2 { font-size:1.05rem; color:var(--accent); margin:2.25rem 0 .5rem;
+  padding-bottom:.25rem; border-bottom:1px solid var(--rule); font-weight:600; }
+ul { padding-left:1.2rem; margin:.25rem 0; }
+dl { display:grid; grid-template-columns:6rem 1fr; gap:.4rem 1rem; margin:0; }
+dt { color:var(--muted); } dd { margin:0; }
+footer { margin-top:3rem; color:var(--muted); font-size:.85rem; }
+@media (max-width:30rem) { dl { grid-template-columns:1fr; } dt { margin-top:.5rem; } }
