@@ -27,7 +27,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp index.html style.css _site/
+          cp index.html style.css photo.jpg _site/
           cp cv/cv.pdf _site/cv.pdf
       - uses: actions/upload-pages-artifact@v3
         with:

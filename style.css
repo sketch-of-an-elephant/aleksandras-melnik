@@ -18,3 +18,4 @@ dl { display:grid; grid-template-columns:6rem 1fr; gap:.4rem 1rem; margin:0; }
 dt { color:var(--muted); } dd { margin:0; }
 footer { margin-top:3rem; color:var(--muted); font-size:.85rem; }
 @media (max-width:30rem) { dl { grid-template-columns:1fr; } dt { margin-top:.5rem; } }
+.photo { width:140px; height:140px; border-radius:50%; object-fit:cover; display:block; margin:0 0 1.25rem; }
