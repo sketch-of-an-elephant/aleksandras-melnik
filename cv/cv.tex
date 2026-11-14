@@ -1,37 +1,44 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10.5pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[margin=2cm]{geometry}
+\usepackage{charter}
+\usepackage{microtype}
+\usepackage[a4paper,margin=2.1cm,top=1.8cm]{geometry}
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
 \usepackage{titlesec}
 \usepackage{needspace}
+\usepackage{array}
 
-\definecolor{accent}{RGB}{30,60,110}
+\definecolor{accent}{RGB}{28,52,94}
+\definecolor{muted}{RGB}{95,99,110}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\titleformat{\section}{\Needspace{6\baselineskip}\large\bfseries\color{accent}}{}{0pt}{}[\vspace{-0.6em}\color{accent}\rule{\textwidth}{0.4pt}]
-\titlespacing*{\section}{0pt}{1.0em}{0.6em}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.15em,topsep=0.2em}
+\linespread{1.06}
 
+\titleformat{\section}{\Needspace{6\baselineskip}\normalsize\scshape\color{accent}}{}{0pt}{\MakeLowercase}[\vspace{-0.75em}\color{accent!60}\rule{\textwidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{1.1em}{0.7em}
+\setlist[itemize]{leftmargin=1.1em,itemsep=0.1em,topsep=0.15em,label=\textcolor{accent}{\textbullet}}
+
+\newlength{\datecol}\setlength{\datecol}{2.4cm}
 % \entry{dates}{title}{place}{details}
 \newcommand{\entry}[4]{%
-  \noindent\makebox[2.6cm][l]{#1}%
-  \parbox[t]{\dimexpr\textwidth-2.6cm\relax}{\textbf{#2}%
+  \noindent\makebox[\datecol][l]{\textcolor{muted}{#1}}%
+  \parbox[t]{\dimexpr\textwidth-\datecol\relax}{\textbf{#2}%
     \if\relax\detokenize{#3}\relax\else, #3\fi
-    \if\relax\detokenize{#4}\relax\else\\#4\fi}\par\vspace{0.45em}}
-% Visible marker for details still to confirm. Remove before sending.
-\newcommand{\todo}[1]{\textcolor{red}{[#1]}}
+    \if\relax\detokenize{#4}\relax\else\\[0.1em]{\small #4}\fi}\par\vspace{0.45em}}
 
 \begin{document}
 
-{\LARGE\bfseries Aleksandras Melnik}\\[0.3em]
-Logic \textperiodcentered{} Philosophy of Mathematics and Physics \textperiodcentered{} Category Theory\\[0.3em]
-\href{mailto:aaamelnik@gmail.com}{aaamelnik@gmail.com} \quad\textperiodcentered\quad
-\href{https://sketch-of-an-elephant.github.io/aleksandras-melnik}{sketch-of-an-elephant.github.io/aleksandras-melnik}\\
-\href{https://github.com/sketch-of-an-elephant}{github.com/sketch-of-an-elephant}
+\begin{center}
+{\fontsize{22}{26}\selectfont Aleksandras Melnik}\\[0.45em]
+{\color{muted} Logic \,\textperiodcentered\, Philosophy of Mathematics and Physics \,\textperiodcentered\, Category Theory}\\[0.45em]
+{\small
+\href{mailto:aaamelnik@gmail.com}{aaamelnik@gmail.com} \quad\textbar\quad
+\href{https://sketch-of-an-elephant.github.io/aleksandras-melnik}{sketch-of-an-elephant.github.io/aleksandras-melnik} \quad\textbar\quad
+\href{https://github.com/sketch-of-an-elephant}{github.com/sketch-of-an-elephant}}
+\end{center}
 
 \section{Research interests}
 Equivalence of scientific theories (definitional, Morita and categorical equivalence);
@@ -40,56 +47,59 @@ symmetry and structure in general relativity and quantum theory;
 categorical logic and the foundations of mathematics.
 
 \section{Education}
-\entry{2024 -- 2027}{MA in Logic and Philosophy of Science}{Munich Center for Mathematical Philosophy (MCMP), LMU Munich}
-  {Expected April 2027. DAAD scholarship for master's studies.\\
-   Thesis supervisor: John Dougherty.\\
-   Uses logic and category theory to ask when two formulations of a physical theory are equivalent.}
+\entry{2024 -- 2027}{MA in Logic and Philosophy of Science}{Munich Center for Mathematical Philosophy, LMU Munich}
+  {Expected April 2027. Thesis supervisor: John Dougherty. DAAD scholarship holder.\\
+   Thesis: logic and category theory applied to the question of when two formulations of a physical theory are equivalent.}
 \entry{2020 -- 2024}{BSc in Mathematics and Applications of Mathematics}{Vilnius University}{}
-\entry{2016 -- 2020}{Vilnius Lyceum}{Lithuania}{100\% in the national mathematics exam.}
-
-\section{Honours and awards}
-\entry{2024}{DAAD Scholarship}{German Academic Exchange Service}{Full scholarship for master's studies in Germany.}
-\entry{2020}{Bronze medal}{International Mathematical Olympiad (IMO)}{}
 
 \section{Talks}
-\entry{Jan 2026}{Grounding and Explanation Converging in Mathematics}{Nineteenth Annual Cambridge Graduate Conference in Philosophy of Mathematics and Logic, University of Cambridge}{}
-\entry{Nov 2025}{Justifying the Laws of Logic}{Vilnius Philosophy Graduate Conference, Vilnius University}{}
-\entry{}{Category-theoretic models for mereology}{Vilnius University Philosophy Student Conference}{}
+\entry{Jan 2026}{Grounding and Explanation Converging in Mathematics}{}
+  {Nineteenth Annual Cambridge Graduate Conference in Philosophy of Mathematics and Logic, University of Cambridge}
+\entry{Nov 2025}{Justifying the Laws of Logic}{}
+  {Vilnius Philosophy Graduate Conference, Vilnius University}
+\entry{2023}{Category-Theoretic Models for Mereology}{}
+  {Vilnius University Philosophy Student Conference}
+
+\section{Work in progress}
+\entry{}{Nothing to Reduce To?}{}{Paper on symmetry, sophistication and theory equivalence.}
+
+\section{Honours and awards}
+\entry{2024}{DAAD Scholarship}{}{German Academic Exchange Service scholarship for master's studies in Germany.}
+\entry{2020}{Bronze Medal}{}{International Mathematical Olympiad (IMO).}
 
 \section{Research experience}
-\entry{2022}{Visiting Researcher}{Institute of Computer Science, Czech Academy of Sciences}{}
-\entry{2022}{Research Assistant}{Institute of Mathematics, Vilnius University}{}
-
-\section{Research seminars (Vilnius University)}
-Participant in weekly research seminars, and curator (organiser) of three:
-\begin{itemize}
-  \item \textbf{Curator:} Algebraic Topology (2022--23), Intuitionistic Logic (2023), Mathematical Quantum Mechanics (2024)
-  \item Category Theory (2022--24); Mathematical Logic (2021--22); Axiomatic Theories of Truth (2022)
-  \item Extremal Combinatorics (2019--24); Algebraic Geometry (2023--24); Algebraic Number Theory (2022);
-        Dynamical Systems (2022--24); Network Theory (2023--24)
-\end{itemize}
+\entry{2022}{Visiting Researcher}{}{Institute of Computer Science, Czech Academy of Sciences}
+\entry{2022}{Research Assistant}{}{Institute of Mathematics, Vilnius University}
 
 \section{Teaching}
-\entry{2021 -- 2024}{Lecturer, Lithuanian national olympiad training camps}{}
-  {Training the national teams for the IMO (2021--24), the Middle European Mathematical Olympiad (2021--23) and the Baltic Way competition (2021--23).}
+\entry{2021 -- 2024}{Lecturer, Lithuanian National Mathematical Olympiad Training Camps}{}
+  {Taught the national teams for the International Mathematical Olympiad (2021--24), the Middle European Mathematical Olympiad (2021--23) and the Baltic Way competition (2021--23).}
+
+\section{Research seminars}
+Vilnius University, 2019--2024. Organiser (curator) of three seminars; regular participant in others.
+\begin{itemize}
+  \item \textbf{Organiser:} Algebraic Topology (2022--23), Intuitionistic Logic (2023), Mathematical Quantum Mechanics (2024).
+  \item \textbf{Participant:} Category Theory (2022--24), Mathematical Logic (2021--22), Axiomatic Theories of Truth (2022), Extremal Combinatorics (2019--24), Algebraic Geometry (2023--24), Algebraic Number Theory (2022), Dynamical Systems (2022--24), Network Theory (2023--24).
+\end{itemize}
 
 \section{Competitions}
 \begin{itemize}
-  \item International Mathematical Olympiad: bronze medal, 2020
-  \item Vojtěch Jarník International Mathematical Competition: Lithuanian team, 2024
-  \item Baltic Way: Lithuanian team, 2018 and 2019
-  \item Middle European Mathematical Olympiad: Lithuanian team, 2016 and 2017
-  \item International Philosophy Olympiad: Lithuanian team, 2019
+  \item International Mathematical Olympiad, Lithuanian team, 2020: bronze medal.
+  \item Vojtěch Jarník International Mathematical Competition, Lithuanian team, 2024.
+  \item Baltic Way, Lithuanian team, 2018 and 2019.
+  \item Middle European Mathematical Olympiad, Lithuanian team, 2016 and 2017.
+  \item International Philosophy Olympiad, Lithuanian team, 2019.
 \end{itemize}
 
-\section{Other experience}
-\entry{2023 -- 2024}{Data Engineer and Analyst}{Adtractive}{}
+\section{Other employment}
+\entry{2023 -- 2024}{Data Engineer and Analyst}{}{Adtractive}
 
-\section{Languages}
-Lithuanian (native), Ukrainian (native), English (C2, IELTS 8.5), French (fluent), Russian (fluent), German (A1).
-
-\section{Technical skills}
-\textbf{Programming:} Python, C++, R, SQL, LookML, \LaTeX.\quad
-\textbf{Software:} Mathematica, MATLAB, RStudio, Qiskit, Maxima.
+\section{Skills and languages}
+\begin{tabular}{@{}p{3.0cm}p{\dimexpr\textwidth-3.0cm-2\tabcolsep\relax}@{}}
+\textcolor{muted}{Proof assistants} & Lean, Rocq\\[0.15em]
+\textcolor{muted}{Programming} & Python, C++, R, SQL, LookML, \LaTeX\\[0.15em]
+\textcolor{muted}{Software} & Mathematica, MATLAB, RStudio, Qiskit, Maxima\\[0.15em]
+\textcolor{muted}{Languages} & Lithuanian (native), Ukrainian (native), English (C2, IELTS 8.5), French (fluent), Russian (fluent), German (A1)\\
+\end{tabular}
 
 \end{document}
